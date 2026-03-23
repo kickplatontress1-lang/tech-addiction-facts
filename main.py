@@ -49,6 +49,6 @@ def pwd():
 
 @app.route("/randimg")
 def randimg():
-    return f'<h1>Случайная картинка!</h1> <img src="{random.choice(imglinks)}"> <a href="/randimg">Ещё раз</a> <br> <a href="/secret">Назад</a>'
+    return f'<h1>Случайная картинка!</h1> <img src="{ url_for("static", filename=random.choice(imglinks)) }"> <a href="/randimg">Ещё раз</a> <br> <a href="/secret">Назад</a>'
 
 app.run(debug=True)
